@@ -16,34 +16,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.container{
-  background-color: aliceblue;
-  padding: 28px;
-  border-radius: 7px;
-  box-shadow: 0 10px 10px rgb(47, 103, 152);
-  width: 90%;
-  margin: 10px;
-  max-width: 450px;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 500;
-}
-
-.heading{
-  font-size: 28px;
-}
-
-.input{
-  height: 53px;
-  width: 300px;
-  background-color: whitesmoke;
-  border-color: rgba(245, 245, 245, 0.748);
-  font-size: 16px;
-  padding: 0 42px;
-  border-radius: 5px;
-}
-
-.meaning-container{
-  display: none;
-}
