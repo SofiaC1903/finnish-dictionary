@@ -2,24 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [input, setInput] = useState("");
+  const [infoText, setInfoText] = useState("Type a word in Finnish and press Enter");
+  const [result, setResult] = useState(null);
+  const [audioUrl, setAudioUrl] = useState("");
 }
 
 export default App;
