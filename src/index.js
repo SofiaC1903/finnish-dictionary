@@ -11,7 +11,6 @@ root.render(
   </React.StrictMode>
 
 );
-
 // Index JavaScript code based on code in repository: https://github.com/sahandghavidel/HTML-CSS-JavaScript-projects-for-beginners/blob/main/projects/english-dictionary/index.js
 const inputEl = document.getElementById("input");
 const infoTextEl = document.getElementById("info-text");
@@ -24,7 +23,7 @@ const audioEl = document.getElementById("audio");
 const res = await fetch("https://libretranslate.com/translate", {
   method: "POST",
   body: JSON.stringify({
-    q: inputEl,
+    q: inputEl.value,
     source: "fi",
     target: "en",
   }),
@@ -63,7 +62,8 @@ async function fetchAPI(res){
 
 inputEl.addEventListener("keyup", (e) => {
   if(e.target.value && e.key === "Enter"){
-    fetchAPI(e.target.value);
+    console.log("Enter key pressed:", e.target.value); 
+    fetchAPI(res);
   }
 });
 
