@@ -65,9 +65,28 @@ function App() {
     }
   };
 
+  const handleKeyUp = async (e) => {
+    if (e.key === "Enter" && input.trim()){
+      setInfoText(`Translating "${input}"...`);
+      const translated = await translateWord(input.trim());
+
+      if (translated) {
+        await fetchDefinition(translated);
+      }
+    }
+  };
+
   return(
     <div className="container">
-      <h1></>
+      <h1 className = "heading">Finnish Dictionary</h1>
+      <input placeholder="Enter a word" type="text" className="input" value={input} onChange={(e) => setInput(e.target.value)} onKeyUp={handleKeyUp}/>
+      <p className="info-text">{infoText}</p>
+      {result && 
+        (<div className="meaning-container">
+         <p> Word Title: <span className="title">{result.word}</span></p>
+         <p>Meaning: <span className="meaning">{result.meaning}</span></p>
+         {audioUrl && <audio controls src={audioUrl}></audio>}
+      </div>)}
     </div>
   );
 }
