@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import React, {useState} from "react";
 import './App.css';
 
@@ -60,7 +59,7 @@ function App() {
       setInfoText("");
     }
     catch(err){
-      console.error("Definition fetch error:", error);
+      console.error("Definition fetch error:", err);
       setInfoText("Error fetching definition.");
     }
   };
