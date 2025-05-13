@@ -16,6 +16,7 @@ root.render(
 const inputEl = document.getElementById("input");
 const infoTextEl = document.getElementById("info-text");
 const meaningContainerEl = document.getElementById("meaning-container");
+const titleEl = document.getElementById("title");
 const meaningEl = document.getElementById("meaning");
 const audioEl = document.getElementById("audio");
 
@@ -34,7 +35,7 @@ async function fetchAPI(res){
   try{
     infoTextEl.style.display = "block";
     meaningContainerEl.style.display = "none";
-    infoTextEl.innerText = 'Searching the meaning of "${inputEl}"';
+    infoTextEl.innerText = `Searching the meaning of ${inputEl.value}`;
     const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${res}`;
     const result = await fetch(url).then((res) => res.json());
 
@@ -61,7 +62,7 @@ async function fetchAPI(res){
 }
 
 inputEl.addEventListener("keyup", (e) => {
-  if(e.target.value && e.key == "Enter"){
+  if(e.target.value && e.key === "Enter"){
     fetchAPI(e.target.value);
   }
 });
