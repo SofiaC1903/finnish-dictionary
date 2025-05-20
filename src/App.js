@@ -67,12 +67,13 @@ function App() {
   const handleKeyUp = async (e) => {
     if (e.key === "Enter" && input.trim()){
       setInfoText(`Translating "${input}"...`);
-      const translated = await translateWord(input.trim());
+      const translated = await translateWord(input);
 
       if (translated) {
         await fetchDefinition(translated);
       }
     }
+    
   };
 
   return(
